@@ -38,4 +38,9 @@ o Projeto consiste em um mini sistema MVC em PHP com CRUD de **Pessoas** e **Con
    docker compose -f infra/compose.yaml exec php php util/createSchema.php
    ```
 
+ 6. Acesse o projeto
+    ```bash
+    http://localhost:8080
+     ```
+
 ### Desenvolvido por Vinicius Vitório Rodrigues.

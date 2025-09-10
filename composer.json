@@ -1,0 +1,20 @@
+{
+    "name": "vini/mvc-php",
+    "description": "Mini MVC em PHP",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vinicius Vitório Rodrigues"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "doctrine/orm": "^2.18",
+        "doctrine/dbal": "^3.7",
+        "symfony/cache": "^6.4"
+    }
+}

@@ -44,6 +44,17 @@ class PersonController
         }
 
         $entityManager = EntityManagerFactory::create();
+        $repo = $entityManager->getRepository(Person::class);
+
+        if ($repo->findOneBy(['cpf' => $cpf])) {
+            http_response_code(422);
+
+            header('Content-Type: application/json; charset=utf-8');
+
+            Response::json(['errors' => ['CPF já cadastrado.']], JSON_UNESCAPED_UNICODE);
+            return;
+        }
+
         $person = new Person($name, $cpf);
 
         $entityManager->persist($person);
@@ -86,6 +97,16 @@ class PersonController
 
         if ($errors) {
             Response::json(['errors' => $errors], 422);
+            return;
+        }
+
+        $repo = $entityManager->getRepository(Person::class);
+        if ($repo->findOneBy(['cpf' => $cpf])) {
+            http_response_code(422);
+            
+            header('Content-Type: application/json; charset=utf-8');
+
+            Response::json(['errors' => ['CPF já cadastrado.']], JSON_UNESCAPED_UNICODE);
             return;
         }
 

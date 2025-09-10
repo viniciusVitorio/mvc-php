@@ -14,7 +14,7 @@ class PersonController
         $repo      = $entityManager->getRepository(Person::class);
         $search    = trim($_GET['q'] ?? '');
 
-        $people = $search !== ''
+        $peoples = $search !== ''
             ? array_filter(
                 $repo->findBy([], ['id' => 'DESC']),
                 fn(Person $person): bool => stripos($person->name(), $search) !== false

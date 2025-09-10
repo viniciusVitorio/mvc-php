@@ -17,7 +17,7 @@
     <th>CPF</th>
     <th>Ações</th>
   </tr>
-  <?php foreach ($peopleeople as $people): ?>
+  <?php foreach ($peoples as $people): ?>
     <tr>
       <td><?= $people->id(); ?></td>
       <td><?= htmlspecialchars($people->name()); ?></td>
